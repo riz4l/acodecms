@@ -24,9 +24,7 @@
       }
 
         $data['link_dashboard'] = 'class="active"';
-        $this->load->view('header',$data);
-        $this->load->view('list');
-        $this->load->view('footer');
+        $this->load->view('dashboard',$data);
     }
 
 
