@@ -55,7 +55,14 @@
             		<!-- /.box-header -->
             		<div class="box-body">
 
-      						<div id="infoMessage"><?php echo $message;?></div>
+                    <?php if($this->session->flashdata('message')){?>
+                      <div id="infoMessage">
+                        <div class="alert alert-success alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <?php echo $message;?>
+                        </div>
+                      </div>
+                    <?php } ?>
 
       				    <!-- 		<table cellpadding=0 cellspacing=10>
       							<tr>
