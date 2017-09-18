@@ -9,6 +9,4 @@ acodecms is using ionauth by  benedmunds : https://github.com/benedmunds/CodeIgn
 
 using extension codeigniter hmvc by wiredesignz  : https://bitbucket.org/wiredesignz/codeigniter-modular-extensions-hmvc
 
-# CRUD WITH AJAX READY + DATATABLE
-
 acodecms under development.
