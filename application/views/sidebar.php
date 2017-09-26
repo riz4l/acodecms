@@ -21,7 +21,7 @@
           </a>
         </li>
         <li class="header">USERS MANAGEMENT</li>
-        <li><a href="<?php echo base_url()?>auth"><i class="fa fa-users text-red"></i> <span>Users</span></a></li>
+        <li <?php if(isset($link_users)){ echo $link_users;}?>><a href="<?php echo base_url()?>auth"><i class="fa fa-users text-red"></i> <span>Users</span></a></li>
       </ul>
     </section>
     <!-- /.sidebar -->

@@ -40,6 +40,9 @@ class Auth extends CI_Controller {
 				$this->data['users'][$k]->groups = $this->ion_auth->get_users_groups($user->id)->result();
 			}
 
+			// link active
+			$this->data['link_users'] = 'class="active"';
+
 			$this->_render_page('auth/index', $this->data);
 		}
 	}
@@ -384,6 +387,9 @@ class Auth extends CI_Controller {
 			$this->data['csrf'] = $this->_get_csrf_nonce();
 			$this->data['user'] = $this->ion_auth->user($id)->row();
 
+			// link active
+			$this->data['link_users'] = 'class="active"';
+			
 			$this->_render_page('auth/deactivate_user', $this->data);
 		}
 		else
@@ -514,6 +520,9 @@ class Auth extends CI_Controller {
                 'type'  => 'password',
                 'value' => $this->form_validation->set_value('password_confirm'),
             );
+
+            // link active
+			$this->data['link_users'] = 'class="active"';
 
             $this->_render_page('auth/create_user', $this->data);
         }
@@ -666,6 +675,9 @@ class Auth extends CI_Controller {
 			'id'   => 'password_confirm',
 			'type' => 'password'
 		);
+
+		// link active
+		$this->data['link_users'] = 'class="active"';
 
 		$this->_render_page('auth/edit_user', $this->data);
 	}
