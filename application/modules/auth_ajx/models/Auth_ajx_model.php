@@ -67,5 +67,15 @@
 			$this->db->from($this->table);
 			return $this->db->count_all_results();
 		}
+
+		public function get_group_by_id($id)
+		{
+			$query = $this->db->query("SELECT groups.name as nama_group
+			FROM users_groups
+			LEFT JOIN groups
+			ON users_groups.group_id=groups.id where user_id = $id");
+
+			return $query->result_array();
+		}
 	}
 

@@ -25,14 +25,24 @@
 			$no = $_POST['start'];
 			$data = array();
 
+
+
 			foreach ($list as $post) 
 			{
+
+				$group = $this->mdl->get_group_by_id($post->id);
+			
+				$group_ok = array_map(function($array) {
+				    return $array['nama_group'];
+				}, $group);
+
 				$no++;
 				$row = array();
 				$row[] = $no;
 				$row[] = $post->first_name;
 				$row[] = $post->last_name;
 				$row[] = $post->email;
+				$row[] = $group_ok;
 
 				if($post->active =='1'){
 					$row[] = '<a href="'.base_url().'auth/deactivate/'.$post->id.'">active</a>';
